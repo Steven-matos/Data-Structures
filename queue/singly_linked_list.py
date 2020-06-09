@@ -74,7 +74,7 @@ class LinkedList:
         if self.head is self.tail:
             value = self.head.get_value()
             self.head = None
-            self.tail = None
+            self.tail.set_next(None)
             return value
 
         current = self.head
@@ -84,6 +84,7 @@ class LinkedList:
 
         value = self.tail.get_value()
         self.tail = current
+        self.tail = None
         return value
 
     def contains(self, value):
